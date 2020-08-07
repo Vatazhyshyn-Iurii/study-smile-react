@@ -1,0 +1,17 @@
+.App {
+  text-align: center;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.wrapper {
+  margin: 0 auto;
+  width: 60vw;
+  height: 40vh;
+  border: 10px solid #CB7129;
+  border-radius: 50px;
+  padding: 100px;
+}

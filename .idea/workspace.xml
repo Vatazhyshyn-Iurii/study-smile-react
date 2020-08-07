@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="b899054a-a2f1-46a4-9790-00699dc55d03" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/figure/Figure.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/figure/Figure.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/target-square/target-square.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/target-square/target-square.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/initial-data.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1flEh0Wlh1vBwca66FtqBnGoubG" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="dart.analysis.tool.window.visible" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Web_projects\REACT\study-smile-react\src\components\app" />
+      <recent name="C:\Web_projects\REACT\study-smile-react\src\components" />
+    </key>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b899054a-a2f1-46a4-9790-00699dc55d03" name="Default Changelist" comment="" />
+      <created>1596784394959</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1596784394959</updated>
+      <workItem from="1596784399810" duration="20000" />
+      <workItem from="1596784421744" duration="3658000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="1931" y="200" key="FileChooserDialogImpl" timestamp="1596784417959">
+      <screen x="1600" y="-94" width="1920" height="1080" />
+    </state>
+    <state x="1931" y="200" key="FileChooserDialogImpl/0.0.1600.870/1600.-94.1920.1080@1600.-94.1920.1080" timestamp="1596784417959" />
+  </component>
+</project>
