@@ -11,11 +11,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b899054a-a2f1-46a4-9790-00699dc55d03" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/figure/Figure.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/figure/Figure.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/target-square/target-square.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/target-square/target-square.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/initial-data.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/column/Column.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/column/Column.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/task/task.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/app/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/app/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/initial-data.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/initial-data.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,6 +44,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="yarn" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -57,7 +63,7 @@
       <option name="presentableId" value="Default" />
       <updated>1596784394959</updated>
       <workItem from="1596784399810" duration="20000" />
-      <workItem from="1596784421744" duration="3658000" />
+      <workItem from="1596784421744" duration="28303000" />
     </task>
     <servers />
   </component>
@@ -80,5 +86,9 @@
       <screen x="1600" y="-94" width="1920" height="1080" />
     </state>
     <state x="1931" y="200" key="FileChooserDialogImpl/0.0.1600.870/1600.-94.1920.1080@1600.-94.1920.1080" timestamp="1596784417959" />
+    <state x="1814" y="145" key="search.everywhere.popup" timestamp="1596799361114">
+      <screen x="1600" y="-94" width="1920" height="1080" />
+    </state>
+    <state x="1814" y="145" key="search.everywhere.popup/0.0.1600.870/1600.-94.1920.1080@1600.-94.1920.1080" timestamp="1596799361114" />
   </component>
 </project>
