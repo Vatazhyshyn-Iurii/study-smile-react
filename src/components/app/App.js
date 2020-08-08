@@ -1,26 +1,8 @@
 import React from 'react';
 import './App.css';
-import styled from 'styled-components';
-// import Figure from "../figure/Figure";
-// import TargetSquare from "../target-square/target-square";
 import { initialData } from "../../initial-data";
 import Column from "../column/Column";
 import {DragDropContext} from "react-beautiful-dnd";
-
-// const wrapper = () => (
-//   <div className="wrapper">
-//     <div className="targets">
-//       <TargetSquare/>
-//     </div>
-//     <div className="figures">
-//       <Figure/>
-//     </div>
-//   </div>
-// );
-
-const Container = styled.div`
-  display: flex;
-`;
 
 
 class App extends React.Component {
@@ -40,7 +22,6 @@ class App extends React.Component {
     });
 
     const {destination, source, draggableId} = result;
-    // console.log(destination, draggableId)
 
     if (!destination) {
       return;
@@ -52,11 +33,9 @@ class App extends React.Component {
       return;
     }
 
-    // МОЄ
     if (+destination.droppableId.slice(-1) !== +draggableId.slice(-1)) {
       return;
     }
-    // -------------
 
     const start = this.state.columns[source.droppableId];
     const finish = this.state.columns[destination.droppableId];
@@ -114,7 +93,7 @@ class App extends React.Component {
         onDragStart={this.onDragStart}
         onDragEnd={this.onDragEnd}
       >
-        <Container>
+        <div className='container'>
           {this.state.columnOrder.map((colunmId) => {
             const column = this.state.columns[colunmId];
             const tasks = column.taskIds.map(taskId => this.state.tasks[taskId]);
@@ -124,11 +103,11 @@ class App extends React.Component {
                 key={column.id}
                 column={column}
                 tasks={tasks}
-                // isDropDisabled={isDropDisabled}
+                className={column.class}
               />
               );
           })}
-        </Container>
+        </div>
       </DragDropContext>
     );
   }
