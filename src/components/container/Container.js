@@ -3,10 +3,39 @@ import update from 'immutability-helper';
 import {Dustbin} from "../dustbin/Dustbin";
 import {Box} from "../box/Box";
 import {ItemTypes} from "../../data/ItemTypes";
-import './container.css';
+import { makeStyles } from '@material-ui/core/styles';
 
+const useStyles = makeStyles({
+  container: {
+    width: '600px',
+    margin: '30px auto',
+    display: 'flex',
+    justifyContent: 'space-between',
+    border: '10px solid #CB7129',
+    borderRadius: '50px',
+    padding: '50px',
+  },
+  dustbins: {
+    width: '45%',
+    display: 'grid',
+    gridGap: '20px',
+    gridTemplateColumns: 'auto 1fr',
+    gridTemplateRows: '1fr',
+    transition: '1s all'
+  },
+  box: {
+    width: '45%',
+    display: 'grid',
+    gridGap: '20px',
+    gridTemplateColumns: 'auto 1fr',
+    gridTemplateRows: '1fr',
+    transition: '1s all',
+    position: 'relative'
+  },
+});
 
 export const Container = () => {
+  const classes = useStyles();
   const [dustbins, setDustbins] = useState([
     { accepts: [ItemTypes.CIRCLE], lastDroppedItem: null, className: 'circle-container' },
     { accepts: [ItemTypes.OVAL], lastDroppedItem: null, className: 'oval-container' },
@@ -21,10 +50,12 @@ export const Container = () => {
     { name: 'triangle', type: ItemTypes.TRIANGLE },
     { name: 'oval', type: ItemTypes.OVAL },
   ]);
-  const [droppedBoxNames, setDroppedBoxNames] = useState([])
+  const [droppedBoxNames, setDroppedBoxNames] = useState([]);
+
   function isDropped(boxName) {
     return droppedBoxNames.indexOf(boxName) > -1
   }
+
   const handleDrop = useCallback(
     (index, item) => {
       const { name } = item;
@@ -42,10 +73,11 @@ export const Container = () => {
       )
     },
     [droppedBoxNames, dustbins],
-  )
+  );
+
   return (
-    <div className='container'>
-      <div className='dustbins'>
+    <div className={classes.container}>
+      <div className={classes.dustbins}>
         {dustbins.map(({accepts, lastDroppedItem, className}, index) => (
           <Dustbin
             accept={accepts}
@@ -57,7 +89,7 @@ export const Container = () => {
         ))}
       </div>
 
-      <div className='box'>
+      <div className={classes.box}>
         {boxes.map(({ name, type }, index) => (
           <Box
             name={name}
@@ -68,5 +100,5 @@ export const Container = () => {
         ))}
       </div>
     </div>
-  )
-}
+  );
+};
