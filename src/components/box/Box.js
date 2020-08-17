@@ -56,8 +56,57 @@ const useStyles = makeStyles({
     border: 'none',
     position: 'absolute',
     left: '100px',
-    top: '140px'
-  }
+    top: '140px',
+  },
+  guelderrose: {
+    position: 'absolute',
+    left: '100px',
+    width: '100px',
+    height: '100px',
+    background: 'url(../img/guelderrose.png) no-repeat center',
+    backgroundSize: 'contain',
+  },
+  carrot: {
+    position: 'absolute',
+    top: '100px',
+    left: '100px',
+    width: '100px',
+    height: '100px',
+    background: 'url(../img/carrot.png) no-repeat center',
+    backgroundSize: 'contain',
+  },
+  sunflower: {
+    position: 'absolute',
+    top: '100px',
+    width: '100px',
+    height: '100px',
+    background: 'url(../img/sunflower.png) no-repeat center',
+    backgroundSize: 'contain',
+  },
+  rocket: {
+    position: 'absolute',
+    width: '100px',
+    height: '100px',
+    background: 'url(../img/rocket.png) no-repeat center',
+    backgroundSize: 'contain',
+  },
+  hat: {
+    position: 'absolute',
+    left: '220px',
+    width: '90px',
+    height: '90px',
+    background: 'url(../img/hat.png) no-repeat center',
+    backgroundSize: 'contain',
+  },
+  pyramid: {
+    position: 'absolute',
+    left: '220px',
+    top: '100px',
+    width: '100px',
+    height: '100px',
+    background: 'url(../img/pyramid.png) no-repeat center',
+    backgroundSize: 'contain',
+  },
 });
 
 export const Box = ({ name, type, isDropped }) => {
@@ -69,9 +118,5 @@ export const Box = ({ name, type, isDropped }) => {
     }),
   });
 
-  if (isDropped) {
-    return <div ref={drag} className={classes.div}> </div>;
-  }
-
-  return <div ref={drag} className={classes[name]}> </div>;
+  return <div ref={drag} className={isDropped ? classes.div : classes[name]}> </div>;
 };

@@ -2,23 +2,21 @@ import React, { useState, useCallback } from 'react';
 import update from 'immutability-helper';
 import {Dustbin} from "../dustbin/Dustbin";
 import {Box} from "../box/Box";
-import {ItemTypes} from "../../data/ItemTypes";
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles({
   container: {
-    width: '600px',
+    width: '700px',
     margin: '30px auto',
     display: 'flex',
     justifyContent: 'space-between',
     border: '10px solid #CB7129',
     borderRadius: '50px',
-    padding: '50px',
+    padding: '30px',
   },
   dustbins: {
     width: '45%',
     display: 'grid',
-    gridGap: '20px',
     gridTemplateColumns: 'auto 1fr',
     gridTemplateRows: '1fr',
     transition: '1s all'
@@ -26,7 +24,6 @@ const useStyles = makeStyles({
   box: {
     width: '45%',
     display: 'grid',
-    gridGap: '20px',
     gridTemplateColumns: 'auto 1fr',
     gridTemplateRows: '1fr',
     transition: '1s all',
@@ -34,22 +31,10 @@ const useStyles = makeStyles({
   },
 });
 
-export const Container = () => {
+export const Container = ({ dustbinsData, boxesData}) => {
   const classes = useStyles();
-  const [dustbins, setDustbins] = useState([
-    { accepts: [ItemTypes.CIRCLE], lastDroppedItem: null, className: 'circle-container' },
-    { accepts: [ItemTypes.OVAL], lastDroppedItem: null, className: 'oval-container' },
-    { accepts: [ItemTypes.RECTANGLE], lastDroppedItem: null, className: 'rectangle-container' },
-    { accepts: [ItemTypes.SQUARE], lastDroppedItem: null, className: 'square-container' },
-    { accepts: [ItemTypes.TRIANGLE], lastDroppedItem: null, className: 'triangle-container' },
-  ]);
-  const [boxes] = useState([
-    { name: 'rectangle', type: ItemTypes.RECTANGLE },
-    { name: 'square', type: ItemTypes.SQUARE },
-    { name: 'circle', type: ItemTypes.CIRCLE },
-    { name: 'triangle', type: ItemTypes.TRIANGLE },
-    { name: 'oval', type: ItemTypes.OVAL },
-  ]);
+  const [dustbins, setDustbins] = useState(dustbinsData);
+  const [boxes] = useState(boxesData);
   const [droppedBoxNames, setDroppedBoxNames] = useState([]);
 
   function isDropped(boxName) {
