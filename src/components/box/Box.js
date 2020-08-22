@@ -18,12 +18,16 @@ export const Box = ({ name, type, isDropped, styleRules }) => {
   });
 
   const classes = useStyles();
-  const [, drag] = useDrag({
+  const [{opacity}, drag] = useDrag({
     item: { name, type },
     collect: (monitor) => ({
-      opacity: monitor.isDragging() ? 1 : 1,
+      opacity: monitor.isDragging() ? 0 : 1,
     }),
   });
+  // console.log(isDropped)
 
-  return <div ref={drag} className={isDropped ? classes.div : classes[name]}> </div>;
+  return <div
+    style={{ opacity: opacity }}
+    ref={drag}
+    className={isDropped ? classes.div : classes[name]} />;
 };

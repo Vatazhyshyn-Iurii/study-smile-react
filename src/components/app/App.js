@@ -19,8 +19,8 @@ const App = () => {
              const {id} = match.params;
              return <Container
                itemId={id}
-               dustbinsData={dustbinsTask2}
-               boxesData={boxesTask2}/>
+               dustbinsData={dustbinsTask1}
+               boxesData={boxesTask1}/>
             }}
           />
           <Route render={() => <div className='error404'><h1>404</h1><h2>Page not found</h2></div>} />

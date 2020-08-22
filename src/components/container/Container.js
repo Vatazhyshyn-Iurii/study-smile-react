@@ -3,6 +3,7 @@ import update from 'immutability-helper';
 import {Dustbin} from "../dustbin/Dustbin";
 import {Box} from "../box/Box";
 import { makeStyles } from '@material-ui/core/styles';
+import Congrats from "../modal/Congrats";
 
 const useStyles = makeStyles({
   container: {
@@ -86,6 +87,8 @@ export const Container = ({ dustbinsData, boxesData}) => {
           />
         ))}
       </div>
+      {/*{ droppedBoxNames.length === dustbins.length && <Congrats/> }*/}
+      { droppedBoxNames.length === 1 && <Congrats/> }
     </div>
   );
 };
