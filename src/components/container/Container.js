@@ -87,8 +87,8 @@ export const Container = ({ dustbinsData, boxesData}) => {
           />
         ))}
       </div>
-      {/*{ droppedBoxNames.length === dustbins.length && <Congrats/> }*/}
-      { droppedBoxNames.length === 1 && <Congrats/> }
+      { droppedBoxNames.length === dustbins.length && <Congrats/> }
+      {/*{ droppedBoxNames.length === 1 && <Congrats/> }*/}
     </div>
   );
 };
