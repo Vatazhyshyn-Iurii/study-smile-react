@@ -4,7 +4,7 @@ import {HTML5Backend} from "react-dnd-html5-backend";
 import {Container} from "../container/Container";
 import {DndProvider} from "react-dnd";
 import MainPage from "../main-page/MainPage";
-import {firestore,} from "../../firebase/firebase.utils";
+import { firestore} from "../../firebase/firebase.utils";
 
 
 function App() {
@@ -17,6 +17,7 @@ function App() {
         })
       });
   }, []);
+  if (dataTasks.length > 2) console.log(dataTasks[2].boxes)
 
   return ( dataTasks.length < 2 ? <div>Loading...</div> :
     <div className='Content'>

@@ -20,7 +20,8 @@ const useStyles = makeStyles({
     display: 'grid',
     gridTemplateColumns: 'auto 1fr',
     gridTemplateRows: '1fr',
-    transition: '1s all'
+    transition: '1s all',
+    position: 'relative'
   },
   box: {
     width: '45%',

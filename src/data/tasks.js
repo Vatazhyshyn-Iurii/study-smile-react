@@ -172,7 +172,7 @@ export const tasks = {
         accepts: 'hat',
         styles: {
           position: 'absolute',
-          left: '280px',
+          left: '220px',
           width: '90px',
           height: '90px',
           backgroundSize: 'contain',
@@ -183,8 +183,8 @@ export const tasks = {
         accepts: 'pyramid',
         styles: {
           position: 'absolute',
-          left: '280px',
-          top: '170px',
+          left: '220px',
+          top: '100px',
           width: '100px',
           height: '100px',
           backgroundSize: 'contain',
