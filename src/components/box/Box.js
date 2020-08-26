@@ -2,7 +2,8 @@ import React from 'react';
 import { useDrag } from 'react-dnd';
 import { makeStyles } from '@material-ui/core/styles';
 
-export const Box = ({ name, type, isDropped, styleRules }) => {
+export const Box = ({type, isDropped, styleRules }) => {
+  const name = type;
   const useStyles = makeStyles({
     div: {
       border: '1px dashed gray',
@@ -24,7 +25,6 @@ export const Box = ({ name, type, isDropped, styleRules }) => {
       opacity: monitor.isDragging() ? 0 : 1,
     }),
   });
-  // console.log(isDropped)
 
   return <div
     style={{ opacity: opacity }}

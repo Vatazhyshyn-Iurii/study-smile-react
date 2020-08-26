@@ -64,31 +64,28 @@ export const Container = ({ dustbinsData, boxesData}) => {
   return (
     <div className={classes.container}>
       <div className={classes.dustbins}>
-        {dustbins.map(({accepts, lastDroppedItem, name, styles}, index) => (
+        {dustbins.map(({accepts, lastDroppedItem, styles}, index) => (
           <Dustbin
             accept={accepts}
             lastDroppedItem={lastDroppedItem}
             onDrop={(item) => handleDrop(index, item)}
             key={index}
-            name={name}
             styleRules={styles}
           />
         ))}
       </div>
 
       <div className={classes.box}>
-        {boxes.map(({ name, type, styles }, index) => (
+        {boxes.map(({ type, styles }, index) => (
           <Box
-            name={name}
             type={type}
-            isDropped={isDropped(name)}
+            isDropped={isDropped(type)}
             key={index}
             styleRules={styles}
           />
         ))}
       </div>
       { droppedBoxNames.length === dustbins.length && <Congrats/> }
-      {/*{ droppedBoxNames.length === 1 && <Congrats/> }*/}
     </div>
   );
 };

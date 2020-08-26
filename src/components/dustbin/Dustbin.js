@@ -2,7 +2,8 @@ import React from 'react';
 import { useDrop } from 'react-dnd';
 import { makeStyles } from '@material-ui/core/styles';
 
-export const Dustbin = ({ accept, lastDroppedItem, onDrop, name, styleRules }) => {
+export const Dustbin = ({ accept, lastDroppedItem, onDrop, styleRules }) => {
+  const name = accept;
   const useStyles = makeStyles({
     inside: {
       display: 'flex',
