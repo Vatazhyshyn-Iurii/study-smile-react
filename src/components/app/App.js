@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import {Route, Switch, withRouter} from "react-router-dom";
 import {HTML5Backend} from "react-dnd-html5-backend";
 import {DndProvider} from "react-dnd";
@@ -14,8 +14,9 @@ const App = () => {
           <Route path='/' exact component={MainPage} />
           <Route
             path='/task/:id'
-            render={({ match }) => {
+            render={({match}) => {
               const { id } = match.params;
+              console.log(id)
               return <TaskContainer id={ id } />
             }}
           />

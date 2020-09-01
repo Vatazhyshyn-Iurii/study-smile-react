@@ -65,13 +65,14 @@ export const Container = ({ dustbinsData, boxesData}) => {
   return (
     <div className={classes.container}>
       <div className={classes.dustbins}>
-        {dustbins.map(({accepts, lastDroppedItem, styles}, index) => (
+        {dustbins.map(({ accepts, lastDroppedItem, styles, url}, index) => (
           <Dustbin
             accept={accepts}
             lastDroppedItem={lastDroppedItem}
             onDrop={(item) => handleDrop(index, item)}
             key={index}
             styleRules={styles}
+            url={url}
           />
         ))}
       </div>

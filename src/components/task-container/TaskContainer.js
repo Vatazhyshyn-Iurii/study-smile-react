@@ -21,6 +21,9 @@ const TaskContainer = ({ id }) => {
       .finally(() => setLoading(false));
   }, [id]);
 
+
+  // console.log(id)
+
   return ( loading ? <div>Loading...</div> :
     <Container
       dustbinsData={dataTask.dustbins}

@@ -22,7 +22,7 @@ export const firestore = firebase.firestore();
 
 // adding collection of data
 export const addCollectionAndDocuments = async () => {
-  firestore.collection("tasks").doc('2').set({
+  firestore.collection("tasks").doc().set({
     "dustbins": tasks[2].dustbins,
     "boxes": tasks[2].boxes,
   }).then(function() {

@@ -7,7 +7,7 @@ export const tasks = {
         styles: {
           width: '70px',
           height: '70px',
-          background: 'url(../img/circle-container.png) no-repeat center',
+          background: 'url(https://firebasestorage.googleapis.com/v0/b/study-smile-e1475.appspot.com/o/circle-container.png?alt=media&token=bab3b2a3-0309-4266-b173-b2fbde9f7eb1) no-repeat center',
           right: '-150px',
           backgroundSize: 'cover',
           marginTop: '50px',
@@ -20,7 +20,7 @@ export const tasks = {
           position: 'relative',
           width: '100px',
           height: '50px',
-          background: 'url(../img/oval-container.png) no-repeat center',
+          background: 'url(https://firebasestorage.googleapis.com/v0/b/study-smile-e1475.appspot.com/o/oval-container.png?alt=media&token=10b547cd-6800-43c0-854c-9ba94300627d) no-repeat center',
           backgroundSize: 'cover',
         }
       },
@@ -31,7 +31,7 @@ export const tasks = {
           position: 'relative',
           width: '70px',
           height: '100px',
-          background: 'url(../img/rectangle-container.png) no-repeat center',
+          background: 'url(https://firebasestorage.googleapis.com/v0/b/study-smile-e1475.appspot.com/o/rectangle-container.png?alt=media&token=31be1ed8-7036-481b-b799-fa2e74d564d7) no-repeat center',
           right: '-50px',
           backgroundSize: 'cover',
           marginTop: '50px',
@@ -44,7 +44,7 @@ export const tasks = {
           position: 'relative',
           width: '70px',
           height: '70px',
-          background: 'url(../img/square-container.png) no-repeat center',
+          background: 'url(https://firebasestorage.googleapis.com/v0/b/study-smile-e1475.appspot.com/o/square-container.png?alt=media&token=88e71260-41bc-4e20-a31b-ccdaf2a1165c) no-repeat center',
           backgroundSize: 'cover',
           right: '-70px',
         }
@@ -56,7 +56,7 @@ export const tasks = {
           position: 'relative',
           width: '110px',
           height: '90px',
-          background: 'url(../img/triangle-container.png) no-repeat center',
+          background: 'url(https://firebasestorage.googleapis.com/v0/b/study-smile-e1475.appspot.com/o/triangle-container.png?alt=media&token=d175aa5d-acc5-4d91-ab8a-2b050c0f4221) no-repeat center',
           right: '-150px',
           backgroundSize: 'cover',
           marginTop: '-50px',
@@ -263,5 +263,5 @@ export const tasks = {
   },
 };
 
-export const boxStyles = "position: 'absolute', left: '20px', width: '55px', height: '90px', backgroundColor: '#1f3593'";
-export const dustStyles = "position: 'relative', width: '100px', height: '50px', background: 'url(../img/oval-container.png) no-repeat center', backgroundSize: 'cover'";
+// export const boxStyles = "position: 'absolute', left: '20px', width: '55px', height: '90px', backgroundColor: '#1f3593'";
+// export const dustStyles = "position: 'relative', width: '100px', height: '50px', background: 'url(../img/oval-container.png) no-repeat center', backgroundSize: 'cover'";

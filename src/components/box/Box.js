@@ -26,8 +26,11 @@ export const Box = ({type, isDropped, styleRules }) => {
     }),
   });
 
-  return <div
-    style={{ opacity: opacity }}
-    ref={drag}
-    className={isDropped ? classes.div : classes[name]} />;
+  return (
+    <div
+      style={{ opacity: opacity }}
+      ref={drag}
+      className={isDropped ? classes.div : classes[name]}
+    />
+  );
 };
