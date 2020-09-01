@@ -1,43 +1,30 @@
-import React, {useEffect, useState} from "react";
+import React from "react";
 import {Route, Switch, withRouter} from "react-router-dom";
 import {HTML5Backend} from "react-dnd-html5-backend";
-import {Container} from "../container/Container";
 import {DndProvider} from "react-dnd";
 import MainPage from "../main-page/MainPage";
-import { firestore} from "../../firebase/firebase.utils";
+import TaskContainer from "../task-container/TaskContainer";
 
 
-function App() {
-  const [dataTasks, setDataTasks] = useState([]);
-  useEffect(() => {
-    firestore.collection("tasks").get()
-      .then((snapshot) => {
-        snapshot.forEach(doc => {
-          setDataTasks(dataTasks => [...dataTasks, doc.data()])
-        })
-      });
-  }, []);
-  if (dataTasks.length > 2) console.log(dataTasks[2].boxes)
-
-  return ( dataTasks.length < 2 ? <div>Loading...</div> :
+const App = () => {
+  return (
     <div className='Content'>
       <DndProvider backend={HTML5Backend}>
         <Switch>
-          <Route path='/' component={MainPage} exact/>
+          <Route path='/' exact component={MainPage} />
           <Route
             path='/task/:id'
-            render={({match}) => {
-              const {id} = match.params;
-              return <Container
-                dustbinsData={dataTasks[id - 1].dustbins}
-                boxesData={dataTasks[id - 1].boxes}/>
+            render={({ match }) => {
+              const { id } = match.params;
+              return <TaskContainer id={ id } />
             }}
           />
+          {/*<Route path='/taskcreator' component={TaskCreator1} exact/>*/}
           <Route render={() => <div className='error404'><h1>404</h1><h2>Page not found</h2></div>}/>
         </Switch>
       </DndProvider>
     </div>
-  )
+  );
 }
 
 export default withRouter(App);

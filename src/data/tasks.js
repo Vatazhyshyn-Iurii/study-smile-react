@@ -262,3 +262,6 @@ export const tasks = {
     ]
   },
 };
+
+export const boxStyles = "position: 'absolute', left: '20px', width: '55px', height: '90px', backgroundColor: '#1f3593'";
+export const dustStyles = "position: 'relative', width: '100px', height: '50px', background: 'url(../img/oval-container.png) no-repeat center', backgroundSize: 'cover'";
