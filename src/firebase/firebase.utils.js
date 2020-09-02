@@ -1,8 +1,8 @@
 import firebase from "firebase/app";
 import 'firebase/firestore';
 import 'firebase/auth';
+import 'firebase/storage';
 import {tasks} from "../data/tasks";
-
 
 const config = {
   apiKey: "AIzaSyD5kjFvOxxk_Wz6CfaGCNEYA5VS9Zqq5DI",
@@ -18,16 +18,30 @@ const config = {
 firebase.initializeApp(config);
 
 export const firestore = firebase.firestore();
+export const storage = firebase.storage();
 
 
 // adding collection of data
 export const addCollectionAndDocuments = async () => {
   firestore.collection("tasks").doc().set({
-    "dustbins": tasks[2].dustbins,
-    "boxes": tasks[2].boxes,
+    "dustbins": tasks[1].dustbins,
+    "boxes": tasks[1].boxes,
   }).then(function() {
       console.log("Document successfully written!");
     })
+    .catch(function(error) {
+      console.error("Error writing document: ", error);
+    });
+};
+
+// adding collection from task creator
+export const addTaskFromTaskCreator = (task) => {
+  firestore.collection("tasks").doc().set({
+    "dustbins": task.dustbins,
+    "boxes": task.boxes,
+  }).then(function() {
+    console.log("Document successfully written!");
+  })
     .catch(function(error) {
       console.error("Error writing document: ", error);
     });

@@ -2,7 +2,7 @@ import React from 'react';
 import { useDrop } from 'react-dnd';
 import { makeStyles } from '@material-ui/core/styles';
 
-export const Dustbin = ({ accept, lastDroppedItem, onDrop, styleRules }) => {
+export const Dustbin = ({ accept, lastDroppedItem, onDrop, styleRules, imgUrlContainer, imgUrlItem }) => {
   const name = accept;
   const useStyles = makeStyles({
     inside: {
@@ -29,8 +29,8 @@ export const Dustbin = ({ accept, lastDroppedItem, onDrop, styleRules }) => {
   return (
     <div ref={drop} className={classes[name]}>
       { lastDroppedItem
-        ? <img className={classes.inside} src={`../img/${name}.png`} alt={name}/>
-        : <img className={classes.inside} src={`../img/${name}-container.png`} alt={name}/>
+        ? <img className={classes.inside} src={imgUrlItem} alt={name}/>
+        : <img className={classes.inside} src={imgUrlContainer} alt={name}/>
       }
     </div>
   );
