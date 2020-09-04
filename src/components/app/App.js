@@ -2,16 +2,18 @@ import React from 'react';
 import { Route, Switch, withRouter } from 'react-router-dom';
 import { HTML5Backend } from 'react-dnd-html5-backend';
 import { DndProvider } from 'react-dnd';
+import { ThemeProvider } from '@material-ui/core/styles';
 import MainPage from '../main-page/MainPage';
 import TaskContainer from '../task-container/TaskContainer';
 import TaskCreator from '../task-creator/TaskCreator';
-import { ThemeProvider } from '@material-ui/core/styles';
 import theme from '../ui/Theme';
+import HeaderComponent from "../ui/HeaderComponent";
 
 const App = () => {
   return (
     <ThemeProvider theme={theme}>
-      <div className="Content">
+      <HeaderComponent />
+      <main>
         <DndProvider backend={HTML5Backend}>
           <Switch>
             <Route path="/" exact component={MainPage} />
@@ -33,7 +35,7 @@ const App = () => {
             />
           </Switch>
         </DndProvider>
-      </div>
+      </main>
     </ThemeProvider>
   );
 };

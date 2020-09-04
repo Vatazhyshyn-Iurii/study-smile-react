@@ -8,11 +8,11 @@ const lightGreen = '#67be5c';
 export default createMuiTheme({
   palette: {
     common: {
-      blue: lightGreen,
+      green: lightGreen,
       orange: arcOrange,
     },
     primary: {
-      main: arcBlue,
+      main: lightGreen,
     },
     secondary: {
       main: arcOrange,
