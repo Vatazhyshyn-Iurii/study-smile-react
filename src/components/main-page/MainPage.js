@@ -85,13 +85,21 @@ const MainPage = () => {
           <Grid container justify="center" className={classes.mainContainer}>
             <Grid item className={classes.gridItem}>
               <Grid container direction="column" spacing={3}>
+                {/*<Button*/}
+                {/*  variant="contained"*/}
+                {/*  color="secondary"*/}
+                {/*  className={classes.button}*/}
+                {/*  component={Link}*/}
+                {/*  to="/taskcreator">*/}
+                {/*  Task creator*/}
+                {/*</Button>*/}
                 <Button
                   variant="contained"
                   color="secondary"
                   className={classes.button}
                   component={Link}
-                  to="/taskcreator">
-                  Task creator
+                  to="/create">
+                  Create Task
                 </Button>
                 <Typography align="center" variant="h2">
                   Choose the task

@@ -7,7 +7,8 @@ import MainPage from '../main-page/MainPage';
 import TaskContainer from '../task-container/TaskContainer';
 import TaskCreator from '../task-creator/TaskCreator';
 import theme from '../ui/Theme';
-import HeaderComponent from "../ui/HeaderComponent";
+import HeaderComponent from '../ui/HeaderComponent';
+import { CreateTaskContainer } from '../create-task-component/CreateTaskContainer';
 
 const App = () => {
   return (
@@ -25,6 +26,7 @@ const App = () => {
               }}
             />
             <Route path="/taskcreator" component={TaskCreator} exact />
+            <Route path="/create" component={CreateTaskContainer} exact />
             <Route
               render={() => (
                 <div className="error404">
