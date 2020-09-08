@@ -4,6 +4,7 @@ import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
+import { addTaskFromTaskCreator } from '../../firebase/firebase.utils';
 
 const useStyles = makeStyles((theme) => ({
   checkBox: {
@@ -24,6 +25,22 @@ export const CreateTaskContainer = () => {
     hideSourceOnDrag,
   ]);
 
+  const creteTaskHandler = (e) => {
+    e.preventDefault();
+    const taskItemsAll = Object.values(boxes);
+    const dustbins = taskItemsAll.filter((item) => item.itemType === 'dustbin');
+    const boxes = taskItemsAll.filter((item) => item.itemType === 'boxes');
+    const task = {
+      dustbins,
+      boxes,
+    };
+
+    addTaskFromTaskCreator(task);
+    setBoxes({
+      [Math.random()]: { top: 350, left: 325, title: 'Item' },
+    });
+  };
+
   return (
     <Grid container direction="column">
       <Grid item>
@@ -42,7 +59,7 @@ export const CreateTaskContainer = () => {
               checked={hideSourceOnDrag}
               onChange={toggle}
             />
-            <Typography variant="body1" style={{ display: 'inline' }}>
+            <Typography variant="body2" style={{ display: 'inline' }}>
               Hide the source item while dragging
             </Typography>
           </label>
@@ -58,6 +75,18 @@ export const CreateTaskContainer = () => {
             }}
             className={classes.addItemButton}>
             Add Item
+          </Button>
+        </Grid>
+        <Grid item>
+          <Button
+            variant="outlined"
+            color="primary"
+            disabled={Object.keys(boxes).length <= 1}
+            onClick={(e) => {
+              creteTaskHandler(e);
+            }}
+            className={classes.addItemButton}>
+            Create Task
           </Button>
         </Grid>
       </Grid>

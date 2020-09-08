@@ -180,30 +180,32 @@ export const CreateBox = ({
         <DialogContent>
           <form className={classes.container}>
             <FormControl className={classes.formControl} fullWidth>
-              <InputLabel htmlFor="demo-dialog-native">Type</InputLabel>
+              <InputLabel htmlFor="demo-dialog-native">
+                Type of element
+              </InputLabel>
               <Select
                 native
                 value={type}
                 onChange={(e) => setType(e.target.value)}
                 input={<Input />}>
-                <option value="dustbin">Dustbin</option>
-                <option value="box">Box</option>
+                <option value="dustbin">Container</option>
+                <option value="box">Item</option>
               </Select>
             </FormControl>
             <TextField
-              label="title"
+              label="Title must be the same for the container and item"
               value={title}
               onChange={(e) => setTitle(e.target.value)}
               fullWidth
             />
             <TextField
-              label="Width"
+              label="Width in px"
               value={width}
               onChange={(e) => setWidth(e.target.value.replace(/\D/gi, ''))}
               fullWidth
             />
             <TextField
-              label="Height"
+              label="Height in px"
               value={height}
               onChange={(e) => setHeight(e.target.value.replace(/\D/gi, ''))}
               fullWidth
@@ -230,6 +232,7 @@ export const CreateBox = ({
         </DialogContent>
         <DialogActions>
           <Button
+            variant="contained"
             onClick={(e) => {
               setOpen(false);
               e.preventDefault();
@@ -238,6 +241,7 @@ export const CreateBox = ({
             Cancel
           </Button>
           <Button
+            variant="contained"
             onClick={(e) => {
               setOpen(false);
               addItemHandler(e);
