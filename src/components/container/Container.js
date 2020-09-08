@@ -1,9 +1,9 @@
 import React, { useState, useCallback } from 'react';
 import update from 'immutability-helper';
-import {Dustbin} from "../dustbin/Dustbin";
-import {Box} from "../box/Box";
+import { Dustbin } from '../dustbin/Dustbin';
+import { Box } from '../box/Box';
 import { makeStyles } from '@material-ui/core/styles';
-import Congrats from "../modal/Congrats";
+import Congrats from '../modal/Congrats';
 
 const useStyles = makeStyles({
   container: {
@@ -14,6 +14,7 @@ const useStyles = makeStyles({
     border: '10px solid #CB7129',
     borderRadius: '50px',
     padding: '30px',
+    minHeight: 300,
   },
   dustbins: {
     width: '45%',
@@ -21,7 +22,7 @@ const useStyles = makeStyles({
     gridTemplateColumns: 'auto 1fr',
     gridTemplateRows: '1fr',
     transition: '1s all',
-    position: 'relative'
+    position: 'relative',
   },
   box: {
     width: '45%',
@@ -29,26 +30,26 @@ const useStyles = makeStyles({
     gridTemplateColumns: 'auto 1fr',
     gridTemplateRows: '1fr',
     transition: '1s all',
-    position: 'relative'
+    position: 'relative',
   },
 });
 
-export const Container = ({ dustbinsData, boxesData}) => {
+export const Container = ({ dustbinsData, boxesData }) => {
   const classes = useStyles();
   const [dustbins, setDustbins] = useState(dustbinsData);
   const [boxes] = useState(boxesData);
   const [droppedBoxNames, setDroppedBoxNames] = useState([]);
 
   function isDropped(boxName) {
-    return droppedBoxNames.indexOf(boxName) > -1
+    return droppedBoxNames.indexOf(boxName) > -1;
   }
 
   const handleDrop = useCallback(
     (index, item) => {
       const { name } = item;
       setDroppedBoxNames(
-        update(droppedBoxNames, name ? { $push: [name] } : { $push: [] }),
-      )
+        update(droppedBoxNames, name ? { $push: [name] } : { $push: [] })
+      );
       setDustbins(
         update(dustbins, {
           [index]: {
@@ -56,39 +57,45 @@ export const Container = ({ dustbinsData, boxesData}) => {
               $set: item,
             },
           },
-        }),
-      )
+        })
+      );
     },
-    [droppedBoxNames, dustbins],
+    [droppedBoxNames, dustbins]
   );
 
   return (
     <div className={classes.container}>
       <div className={classes.dustbins}>
-        {dustbins.map(({ accepts, lastDroppedItem, styles, imgUrlContainer, imgUrlItem }, index) => (
-          <Dustbin
-            accept={accepts}
-            lastDroppedItem={lastDroppedItem}
-            onDrop={(item) => handleDrop(index, item)}
-            key={index}
-            styleRules={styles}
-            imgUrlContainer={imgUrlContainer}
-            imgUrlItem={imgUrlItem}
-          />
-        ))}
+        {dustbins.map(
+          (
+            { accepts, lastDroppedItem, styles, imgUrlContainer, imgUrlItem },
+            index
+          ) => (
+            <Dustbin
+              accept={accepts}
+              lastDroppedItem={lastDroppedItem}
+              onDrop={(item) => handleDrop(index, item)}
+              key={index}
+              styleRules={styles}
+              imgUrlContainer={imgUrlContainer}
+              boxesData={boxes}
+            />
+          )
+        )}
       </div>
 
       <div className={classes.box}>
-        {boxes.map(({ type, styles }, index) => (
+        {boxes.map(({ type, styles, imgUrlItem }, index) => (
           <Box
             type={type}
             isDropped={isDropped(type)}
             key={index}
             styleRules={styles}
+            imgUrlItem={imgUrlItem}
           />
         ))}
       </div>
-      { droppedBoxNames.length === dustbins.length && <Congrats/> }
+      {droppedBoxNames.length === dustbins.length && <Congrats />}
     </div>
   );
 };

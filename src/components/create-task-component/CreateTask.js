@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDrop } from 'react-dnd';
-import { Box } from './Box';
+import { CreateBox } from './CreateBox';
 import update from 'immutability-helper';
 
 const styles = {
@@ -39,19 +39,41 @@ export const CreateTask = ({ hideSourceOnDrag, boxes, setBoxes }) => {
 
   return (
     <div ref={drop} style={styles}>
-      {Object.keys(boxes).map((key) => {
-        const { left, top, title } = boxes[key];
+      {Object.keys(boxes).map((item) => {
+        const {
+          left,
+          top,
+          title,
+          itemType = null,
+          styles = null,
+          imageUrlContainer = null,
+          imageUrlItem = null,
+        } = boxes[item];
+
         return (
-          <Box
-            key={key}
-            id={key}
+          <CreateBox
+            key={item}
+            id={item}
             left={left}
             top={top}
             hideSourceOnDrag={hideSourceOnDrag}
             boxes={boxes}
             setBoxes={setBoxes}>
-            {title}
-          </Box>
+            {itemType ? (
+              <img
+                style={{
+                  maxHeight: '100%',
+                  maxWidth: '100%',
+                  width: +styles.width,
+                  height: +styles.height,
+                }}
+                src={imageUrlContainer ? imageUrlContainer : imageUrlItem}
+                alt="title"
+              />
+            ) : (
+              title
+            )}
+          </CreateBox>
         );
       })}
     </div>
