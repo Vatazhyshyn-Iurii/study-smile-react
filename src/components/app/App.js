@@ -5,7 +5,6 @@ import { DndProvider } from 'react-dnd';
 import { ThemeProvider } from '@material-ui/core/styles';
 import MainPage from '../main-page/MainPage';
 import TaskContainer from '../task-container/TaskContainer';
-import TaskCreator from '../task-creator/TaskCreator';
 import theme from '../ui/Theme';
 import HeaderComponent from '../ui/HeaderComponent';
 import { CreateTaskContainer } from '../create-task-component/CreateTaskContainer';
@@ -25,7 +24,6 @@ const App = () => {
                 return <TaskContainer id={id} />;
               }}
             />
-            <Route path="/taskcreator" component={TaskCreator} exact />
             <Route path="/create" component={CreateTaskContainer} exact />
             <Route
               render={() => (

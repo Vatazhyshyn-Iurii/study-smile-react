@@ -2,7 +2,7 @@ import React from 'react';
 import { useDrag } from 'react-dnd';
 import { makeStyles } from '@material-ui/core/styles';
 
-export const Box = ({ type, isDropped, styleRules, imgUrlItem }) => {
+export const Box = ({ type, isDropped, styleRules, imageUrlItem }) => {
   const name = type;
   const useStyles = makeStyles({
     div: {
@@ -39,7 +39,7 @@ export const Box = ({ type, isDropped, styleRules, imgUrlItem }) => {
       ref={drag}
       className={isDropped ? classes.div : classes[name]}>
       {!isDropped && (
-        <img className={classes.inside} src={imgUrlItem} alt={name} />
+        <img className={classes.inside} src={imageUrlItem} alt={name} />
       )}
     </div>
   );

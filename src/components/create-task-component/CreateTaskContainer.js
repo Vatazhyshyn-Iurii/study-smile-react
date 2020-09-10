@@ -19,17 +19,19 @@ export const CreateTaskContainer = () => {
   const classes = useStyles();
   const [hideSourceOnDrag, setHideSourceOnDrag] = useState(true);
   const [boxes, setBoxes] = useState({
-    a: { top: 150, left: 325, title: 'Item' },
+    a: { top: 125, left: 325, title: 'Item' },
   });
   const toggle = useCallback(() => setHideSourceOnDrag(!hideSourceOnDrag), [
     hideSourceOnDrag,
   ]);
+  const allItems = boxes;
 
   const creteTaskHandler = (e) => {
     e.preventDefault();
-    const taskItemsAll = Object.values(boxes);
+
+    const taskItemsAll = Object.values(allItems);
     const dustbins = taskItemsAll.filter((item) => item.itemType === 'dustbin');
-    const boxes = taskItemsAll.filter((item) => item.itemType === 'boxes');
+    const boxes = taskItemsAll.filter((item) => item.itemType === 'box');
     const task = {
       dustbins,
       boxes,
@@ -37,12 +39,17 @@ export const CreateTaskContainer = () => {
 
     addTaskFromTaskCreator(task);
     setBoxes({
-      [Math.random()]: { top: 350, left: 325, title: 'Item' },
+      [Math.random()]: { top: 125, left: 325, title: 'Item' },
     });
   };
 
   return (
     <Grid container direction="column">
+      <Grid item>
+        <Typography variant="h2" align="center" style={{ color: '#67be5c' }}>
+          You can create your own task
+        </Typography>
+      </Grid>
       <Grid item>
         <CreateTask
           hideSourceOnDrag={hideSourceOnDrag}
@@ -50,7 +57,12 @@ export const CreateTaskContainer = () => {
           setBoxes={setBoxes}
         />
       </Grid>
-      <Grid item container justify="space-between" alignItems="center">
+      <Grid
+        item
+        container
+        justify="space-between"
+        style={{ maxWidth: 900, margin: '0 auto' }}
+        alignItems="center">
         <Grid item className={classes.checkBox}>
           <label htmlFor="hideSourceOnDrag">
             <input
@@ -70,7 +82,7 @@ export const CreateTaskContainer = () => {
             onClick={() => {
               setBoxes({
                 ...boxes,
-                [Math.random()]: { top: 350, left: 325, title: 'Item' },
+                [Math.random()]: { top: 125, left: 325, title: 'Item' },
               });
             }}
             className={classes.addItemButton}>

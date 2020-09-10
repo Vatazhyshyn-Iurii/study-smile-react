@@ -15,21 +15,6 @@ const useStyles = makeStyles({
     borderRadius: '50px',
     padding: '30px',
     minHeight: 300,
-  },
-  dustbins: {
-    width: '45%',
-    display: 'grid',
-    gridTemplateColumns: 'auto 1fr',
-    gridTemplateRows: '1fr',
-    transition: '1s all',
-    position: 'relative',
-  },
-  box: {
-    width: '45%',
-    display: 'grid',
-    gridTemplateColumns: 'auto 1fr',
-    gridTemplateRows: '1fr',
-    transition: '1s all',
     position: 'relative',
   },
 });
@@ -65,36 +50,31 @@ export const Container = ({ dustbinsData, boxesData }) => {
 
   return (
     <div className={classes.container}>
-      <div className={classes.dustbins}>
-        {dustbins.map(
-          (
-            { accepts, lastDroppedItem, styles, imgUrlContainer, imgUrlItem },
-            index
-          ) => (
-            <Dustbin
-              accept={accepts}
-              lastDroppedItem={lastDroppedItem}
-              onDrop={(item) => handleDrop(index, item)}
-              key={index}
-              styleRules={styles}
-              imgUrlContainer={imgUrlContainer}
-              boxesData={boxes}
-            />
-          )
-        )}
-      </div>
-
-      <div className={classes.box}>
-        {boxes.map(({ type, styles, imgUrlItem }, index) => (
-          <Box
-            type={type}
-            isDropped={isDropped(type)}
+      {dustbins.map(
+        (
+          { accepts, lastDroppedItem, styles, imageUrlContainer, imgUrlItem },
+          index
+        ) => (
+          <Dustbin
+            accept={accepts}
+            lastDroppedItem={lastDroppedItem}
+            onDrop={(item) => handleDrop(index, item)}
             key={index}
             styleRules={styles}
-            imgUrlItem={imgUrlItem}
+            imageUrlContainer={imageUrlContainer}
+            boxesData={boxes}
           />
-        ))}
-      </div>
+        )
+      )}
+      {boxes.map(({ type, styles, imageUrlItem }, index) => (
+        <Box
+          type={type}
+          isDropped={isDropped(type)}
+          key={index}
+          styleRules={styles}
+          imageUrlItem={imageUrlItem}
+        />
+      ))}
       {droppedBoxNames.length === dustbins.length && <Congrats />}
     </div>
   );

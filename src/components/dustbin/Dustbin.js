@@ -7,7 +7,7 @@ export const Dustbin = ({
   lastDroppedItem,
   onDrop,
   styleRules,
-  imgUrlContainer,
+  imageUrlContainer,
   boxesData,
 }) => {
   const name = accept;
@@ -17,7 +17,7 @@ export const Dustbin = ({
       alignItems: 'center',
       justifyContent: 'center',
       maxWidth: '100%',
-      height: '100%',
+      maxHeight: '100%',
       margin: '0 auto',
     },
     [name]: styleRules,
@@ -33,14 +33,27 @@ export const Dustbin = ({
     }),
   });
   const containerUrl = boxesData.filter((box) => box.type === accept)[0]
-    .imgUrlItem;
+    .imageUrlItem;
+  // console.log(containerUrl);
 
   return (
-    <div ref={drop} className={classes[name]}>
+    <div
+      ref={drop}
+      style={{ ...styleRules }}
+      // className={classes[name]}
+    >
       {lastDroppedItem ? (
         <img className={classes.inside} src={containerUrl} alt={name} />
       ) : (
-        <img className={classes.inside} src={imgUrlContainer} alt={name} />
+        <img
+          // className={classes.inside}
+          src={imageUrlContainer}
+          style={{
+            width: styleRules.width,
+            height: styleRules.height,
+          }}
+          alt={name}
+        />
       )}
     </div>
   );

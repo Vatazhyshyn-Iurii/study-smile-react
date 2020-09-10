@@ -23,7 +23,6 @@ export const CreateTask = ({ hideSourceOnDrag, boxes, setBoxes }) => {
       const left = Math.round(item.left + delta.x);
       const top = Math.round(item.top + delta.y);
       moveBox(item.id, left, top);
-      // console.log(item);
       return undefined;
     },
   });
@@ -67,7 +66,7 @@ export const CreateTask = ({ hideSourceOnDrag, boxes, setBoxes }) => {
                   width: +styles.width,
                   height: +styles.height,
                 }}
-                src={imageUrlContainer ? imageUrlContainer : imageUrlItem}
+                src={imageUrlContainer || imageUrlItem}
                 alt="title"
               />
             ) : (
