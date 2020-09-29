@@ -2,14 +2,22 @@ import React from 'react';
 import { useDrop } from 'react-dnd';
 import { makeStyles } from '@material-ui/core/styles';
 
-export const Dustbin = ({ accept, lastDroppedItem, onDrop, name, styleRules }) => {
+export const Dustbin = ({
+  accept,
+  lastDroppedItem,
+  onDrop,
+  styleRules,
+  imageUrlContainer,
+  boxesData,
+}) => {
+  const name = accept;
   const useStyles = makeStyles({
     inside: {
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
       maxWidth: '100%',
-      height: '100%',
+      maxHeight: '100%',
       margin: '0 auto',
     },
     [name]: styleRules,
@@ -24,13 +32,29 @@ export const Dustbin = ({ accept, lastDroppedItem, onDrop, name, styleRules }) =
       canDrop: monitor.canDrop(),
     }),
   });
+  const containerUrl = boxesData.filter((box) => box.type === accept)[0]
+    .imageUrlItem;
+  // console.log(containerUrl);
 
   return (
-    <div ref={drop} className={classes[name]}>
-      { lastDroppedItem
-        ? <img className={classes.inside} src={`../img/${name}.png`} alt={name}/>
-        : <img className={classes.inside} src={`../img/${name}-container.png`} alt={name}/>
-      }
+    <div
+      ref={drop}
+      style={{ ...styleRules }}
+      // className={classes[name]}
+    >
+      {lastDroppedItem ? (
+        <img className={classes.inside} src={containerUrl} alt={name} />
+      ) : (
+        <img
+          // className={classes.inside}
+          src={imageUrlContainer}
+          style={{
+            width: styleRules.width,
+            height: styleRules.height,
+          }}
+          alt={name}
+        />
+      )}
     </div>
   );
 };
